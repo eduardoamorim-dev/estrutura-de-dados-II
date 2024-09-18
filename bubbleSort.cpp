@@ -32,6 +32,5 @@ int main (){
     bubbleSort(v, 4);
     imprimirVetor(v, 4);
 
-
     return 0;
 }
