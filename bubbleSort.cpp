@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 void troca(int v[], int a, int b){
     int aux = v[a];
     v[a] = v[b];
