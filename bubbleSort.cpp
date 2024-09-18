@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace std;
+
 void troca(int v[], int a, int b){
     int aux = v[a];
     v[a] = v[b];
@@ -23,8 +25,6 @@ void imprimirVetor(int v[], int n){
     }
     printf("\n");
 }
-
-using namespace std;
 
 int main (){
 
