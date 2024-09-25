@@ -1,36 +1,49 @@
-#include <iostream>
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
 
-using namespace std;
+void geraVetor(int v[], int n) {
+    for (int i = 0; i < n; i++) {
+        v[i] = rand() % n;
+    }
+}
 
-void troca(int v[], int a, int b){
+void troca(int v[], int a, int b) {
     int aux = v[a];
     v[a] = v[b];
     v[b] = aux;
 }
 
-void bubbleSort(int v[], int n){
+// Complexidade de espaco: O(1)
+// Complexidade de tempo: O(n^2)
 
-    for (int i = 0; i < n - 1; i++){
-        for(int j = 0; j < n - 1; j++){
-            if(v[j] > v[j + 1]){
-                troca(v, j, j+1);
+void bubbleSort(int v[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1; j++) {
+            if (v[j] > v[j + 1]) {
+                troca(v, j, j + 1);
             }
         }
     }
 }
 
-void imprimirVetor(int v[], int n){
-    for(int i = 0; i < n; i++){
+void imprimirVetor(int v[], int n) {
+    for (int i = 0; i < n; i++) {
         printf("%d ", v[i]);
     }
     printf("\n");
 }
 
-int main (){
-
-    int v[] = { 4 , 1, 3, 2 };
-    bubbleSort(v, 4);
-    imprimirVetor(v, 4);
-
+int main() {
+    
+    srand(time(NULL));
+    int n = 100000;
+    int v[n];
+    
+    geraVetor(v, n);
+    imprimirVetor(v, n);
+    bubbleSort(v, n);
+    imprimirVetor(v, n);
+    
     return 0;
 }
